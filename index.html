@@ -47,17 +47,17 @@
 
         <div class="flex flex-row gap-[8px] mb-[16px]">
 
-            <button id="All-filter-btn" class="bg-[#3B82F6] px-10 py-2 text-white font-semibold 
+            <button onclick="toggleStyle('All-filter-btn')" id="All-filter-btn" class="bg-[#3B82F6] px-10 py-2 text-white font-semibold 
                 rounded-[4px] shadow-md">All</button>
-            <button id="Interview-filter-btn"
+            <button onclick="toggleStyle('Interview-filter-btn')" id="Interview-filter-btn"
                 class=" px-10 py-2  font-semibold rounded-[4px] shadow-md border-t border-gray-300 ">Interview</button>
-            <button id="Rejected-filter-btn"
+            <button onclick="toggleStyle('Rejected-filter-btn')" id="Rejected-filter-btn"
                 class=" px-10 py-2  font-semibold rounded-[4px]  shadow-md border-t border-gray-300  ">Rejected</button>
         </div>
 
 
 
-        <section id="all-card ">
+        <section id="allCards">
             <!-- 1st card -->
             <div class="flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
                 <!-- 1st part  -->
