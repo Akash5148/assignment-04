@@ -20,10 +20,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="md:font-[Roboto] [#F8FAFC]  ">
+<body class="font-[Roboto] [#F8FAFC]  ">
     <header class=" max-w-[77%] mx-auto container my-[60px]">
-        <h1 class="sm:text-center text-3xl font-extrabold md:text-5xl font-bold  mb-[20px]">Job Application Tracker</h1>
-        <div class="sm:grid grid-cols-1  space-y-1 md: grid-cols-3 gap-[16px]">
+        <h1 class="sm:text-3xl font-extrabold md:text-5xl font-bold  mb-[20px]">Job Application Tracker</h1>
+        <div class="  sm: grid grid-cols-1 md:grid-cols-3 gap-[16px]">
             <div class="p-[20px] rounded-[8px] shadow-md bg-[#FFFFFF] border-t border-gray-300  ">
                 <p class="font-medium text-[14px] mb-[8px]">Total</p>
                 <p id="totalCount" class="text-[25px] font-bold ">0</p>
@@ -40,9 +40,9 @@
     </header>
 
     <main class=" max-w-[77%] mx-auto container my-[60px]">
-        <div class="flex justify-between">
+        <div class="flex justify-between gap-2 ">
             <div class="avail">
-                <h1 class="mb-[30px] font-bold text-3xl ">Available Jobs</h1>
+                <h1 class="sm:text-2xl  font-medium md:mb-[30px] font-bold text-3xl">Available Jobs</h1>
             </div>
 
             <div class="jobs"></div>
@@ -50,14 +50,18 @@
         </div>
 
 
-        <div class="  sm: mx-auto md: flex flex-row gap-[8px] mb-[16px]">
-
-            <button onclick="toggleStyle('All-filter-btn')" id="All-filter-btn" class=" sm:px-5 py-2 md: bg-[#3B82F6]  md:px-10 py-2 text-white font-semibold 
-                rounded-[4px] shadow-md px-10 py-2">All</button>
+        <div class=" flex flex-col md:flex-row gap-[8px] mb-[16px] mt-[24px]  ">
+            <button onclick="toggleStyle('All-filter-btn')" id="All-filter-btn" class=" px-10 py-2 bg-[#3B82F6] text-white font-semibold 
+                rounded-[4px] shadow-md ">All</button>
             <button onclick="toggleStyle('Interview-filter-btn')" id="Interview-filter-btn"
-                class=" sm:px-4 py-2 md:font-semibold rounded-[4px] shadow-md border-t border-gray-300 px-10 py-2">Interview</button>
+                    class="font-semibold rounded-[4px] shadow-md border border-gray-200 px-10 py-2">Interview</button>
+           
             <button onclick="toggleStyle('Rejected-filter-btn') " id="Rejected-filter-btn"
-                class=" sm:px-4 py-2 md:font-semibold px-10 py-2 rounded-[4px]  shadow-md border-t border-gray-300  ">Rejected</button>
+                    class="font-semibold px-10 py-2 rounded-[4px]  shadow-md border border-gray-200  ">Rejected</button>
+           
+
+
+
         </div>
 
 
@@ -77,34 +81,35 @@
         <section id="allCards">
             <!-- 1st card -->
             <div
-                class="sm:mx-auto md:card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+                class="card flex justify-between rounded-[8px] overflow-hidden
+                shadow-lg my-[40px]  border border-gray-200  ">
                 <!-- 1st part  -->
-                <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
-                    <h2 class="text-[24px] font-bold mt-[24px] Mobile">Mobile First Corp</h2>
-                    <p class="text-[#64748B] React">React Native Developer</p>
-                    <p class="text-[#64748B] Remote">Remote
+                <div class="relative bg-[#FFFFFF]  space-y-5 px-[16px]  w-[100%] ">
+                    <h2 class=" text-[18px] font-bold md: text-[24px] font-bold mt-[24px] Mobile">Mobile First Corp</h2>
+                    <p class="text-[#64748B] React ">React Native Developer</p>
+                    <p class=" sm: text-[12px] md:text-[#64748B] Remote ">Remote
                         •
                         Full-time
                         •
                         $130,000 - $175,000</p>
                     <p class="status font-medium text-[14px] bg-[#EEF4FF] px-[12px] uppercase
                     py-[8px] w-[120px] text-center rounded-[4px]">Not Applied</p>
-                    <p class="notes">Build cross-platform mobile applications
+                    <p class=" notes text-[13px]  md:text-[16px]">Build cross-platform mobile applications
                         using React Native. Work on products
                         used by millions of users worldwide.</p>
 
-                    <div class="m-8 flex flex-row gap-3">
+                    <div class="sm:m-1 py-5 md:m-8 flex flex-row gap-3 w-[100%] ">
                         <button
-                            class="interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
+                            class=" interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
                         <button
-                            class="rejected-btn px-4 py-2 rounded-[8px] border border-red-400 text-red-500 uppercase font-semibold">Rejected</button>
+                            class=" rejected-btn px-4 py-2 rounded-[8px] border border-red-400 text-red-500 uppercase font-semibold">Rejected</button>
                     </div>
 
 
                 </div>
                 <!-- 2nd part -->
 
-                <div class=" mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
+                <div class=" absolute right-[28px] top-[760px] md:static mt-[50px] mr-[20px]"><span class=" border border-gray-400  rounded-full p-[6px]"><i
                             class="fa-solid fa-trash-can delete-btn cursor-pointer"></i></span></div>
 
             </div>
@@ -113,12 +118,12 @@
             <!-- 2nd card -->
 
             <div
-                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+                class="card flex justify-between rounded-[8px] shadow-lg my-[40px]  border border-gray-200 overflow-hidden ">
                 <!-- 1st part  -->
-                <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
-                    <h2 class="text-[24px] font-bold mt-[24px] Mobile">WebFlow Agency</h2>
+                <div class=" relative bg-[#FFFFFF]  space-y-5 px-[16px] w-[100%]">
+                    <h2 class="text-[18px] font-bold md:text-[24px] font-bold mt-[24px] Mobile">WebFlow Agency</h2>
                     <p class="text-[#64748B] React">Web Designer & Developer</p>
-                    <p class="text-[#64748B] Remote">Los Angeles, CA
+                    <p class="sm: text-[12px] md:text-[#64748B] Remote ">Los Angeles, CA
                         •
                         Part-time
                         •
@@ -126,10 +131,10 @@
                     </p>
                     <p class="status font-medium text-[14px] bg-[#EEF4FF] px-[12px] uppercase
                     py-[8px] w-[120px] text-center rounded-[4px]">Not Applied</p>
-                    <p class="notes">Create stunning web experiences for high-profile clients. Must have portfolio and
+                    <p class="notes text-[13px]  md:text-[16px]">Create stunning web experiences for high-profile clients. Must have portfolio and
                         experience with modern web design trends.</p>
 
-                    <div class="m-8 flex flex-row gap-3">
+                    <div class="sm:m-1 py-5 md:m-8 flex flex-row gap-3">
                         <button
                             class="interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
                         <button
@@ -140,30 +145,30 @@
                 </div>
                 <!-- 2nd part -->
 
-                <div class=" mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
+                <div class="absolute right-[28px] top-[1180px] md:static mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
                             class="fa-solid fa-trash-can delete-btn cursor-pointer"></i></span></div>
 
             </div>
 
             <!-- 3rd card  -->
             <div
-                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+                class=" card flex justify-between rounded-[8px] shadow-lg my-[40px]  border border-gray-200 overflow-hidden  ">
                 <!-- 1st part  -->
-                <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
-                    <h2 class="text-[24px] font-bold mt-[24px] Mobile">DataViz Solutions</h2>
+                <div class="relative bg-[#FFFFFF]  space-y-5 px-[16px] w-[100%]">
+                    <h2 class="text-[18px] font-bold md:text-[24px] font-bold mt-[24px] Mobile">DataViz Solutions</h2>
                     <p class="text-[#64748B] React">Data Visualization Specialist</p>
-                    <p class="text-[#64748B] Remote">Boston, MA
+                    <p class=" sm: text-[12px] md:text-[#64748B] Remote">Boston, MA
                         •
                         Full-time
                         •
                         $125,000 - $165,000</p>
                     <p class="status font-medium text-[14px] bg-[#EEF4FF] px-[12px] uppercase
                     py-[8px] w-[120px] text-center rounded-[4px]">Not Applied</p>
-                    <p class="notes">Transform complex data into compelling visualizations. Required skills: D3.js,
+                    <p class=" notes text-[13px]  md:text-[16px] ">Transform complex data into compelling visualizations. Required skills: D3.js,
                         React, and strong analytical thinking.
                     </p>
 
-                    <div class="m-8 flex flex-row gap-3">
+                    <div class="sm:m-1 py-5 md:m-8 flex flex-row gap-3">
                         <button
                             class="interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
                         <button
@@ -174,29 +179,29 @@
                 </div>
                 <!-- 2nd part -->
 
-                <div class=" mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
+                <div class=" absolute right-[28px] top-[1600px] md:static mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
                             class="fa-solid fa-trash-can delete-btn cursor-pointer"></i></span></div>
 
             </div>
             <!-- 4th card -->
 
             <div
-                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+                class=" card flex justify-between rounded-[8px] shadow-lg my-[40px]  border border-gray-200 overflow-hidden  ">
                 <!-- 1st part  -->
-                <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
-                    <h2 class="text-[24px] font-bold mt-[24px] Mobile">CloudFirst Inc</h2>
+                <div class=" relative bg-[#FFFFFF]  space-y-5 px-[16px] w-[100%]">
+                    <h2 class="text-[18px] font-bold md:text-[24px] font-bold mt-[24px] Mobile">CloudFirst Inc</h2>
                     <p class="text-[#64748B] React">Backend Developer</p>
-                    <p class="text-[#64748B] Remote">Seattle, WA
+                    <p class="sm: text-[12px] md:text-[#64748B] Remote">Seattle, WA
                         •
                         Full-time
                         •
                         $140,000 - $190,000</p>
                     <p class="status font-medium text-[14px] bg-[#EEF4FF] px-[12px] uppercase
                     py-[8px] w-[120px] text-center rounded-[4px]">Not Applied</p>
-                    <p class="notes">Design and maintain scalable backend systems using Python and AWS. Work with modern
+                    <p class="notes text-[13px]  md:text-[16px]">Design and maintain scalable backend systems using Python and AWS. Work with modern
                         DevOps practices and cloud infrastructure.</p>
 
-                    <div class="m-8 flex flex-row gap-3">
+                    <div class="sm:m-1 py-5 md:m-8 flex flex-row gap-3">
                         <button
                             class="interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
                         <button
@@ -207,18 +212,18 @@
                 </div>
                 <!-- 2nd part -->
 
-                <div class=" mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
+                <div class="absolute right-[28px] top-[2020px] md:static mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
                             class="fa-solid fa-trash-can delete-btn cursor-pointer"></i></span></div>
 
             </div>
             <!-- 5th card -->
             <div
-                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+                class="overflow-hidden card flex justify-between rounded-[8px] shadow-lg my-[40px]  border border-gray-200  ">
                 <!-- 1st part  -->
-                <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
-                    <h2 class="text-[24px] font-bold mt-[24px] Mobile">Innovation Labs</h2>
+                <div class=" relative bg-[#FFFFFF]  space-y-5 px-[16px] w-[100%]">
+                    <h2 class=" text-[18px] font-bold md:text-[24px] font-bold mt-[24px] Mobile">Innovation Labs</h2>
                     <p class="text-[#64748B] React">UI/UX Engineer</p>
-                    <p class="text-[#64748B] Remote">
+                    <p class=" sm: text-[12px] md:text-[#64748B] Remote">
                         Austin, TX
                         •
                         Full-time
@@ -226,10 +231,10 @@
                         $110,000 - $150,000</p>
                     <p class="status font-medium text-[14px] bg-[#EEF4FF] px-[12px] uppercase
                     py-[8px] w-[120px] text-center rounded-[4px]">Not Applied</p>
-                    <p class="notes">Create beautiful and functional user interfaces for our suite of products. Strong
+                    <p class="notes text-[13px]  md:text-[16px]">Create beautiful and functional user interfaces for our suite of products. Strong
                         design skills and frontend development expertise required.</p>
 
-                    <div class="m-8 flex flex-row gap-3">
+                    <div class=" sm:m-1 py-5 md:m-8 flex flex-row gap-3">
                         <button
                             class="interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
                         <button
@@ -240,28 +245,28 @@
                 </div>
                 <!-- 2nd part -->
 
-                <div class="mt-[50px] mr-[20px] "><span class="border border-gray-400  rounded-full p-[6px]"><i
+                <div class=" absolute right-[28px] top-[2460px] md:static mt-[50px] mr-[20px] "><span class="border border-gray-400  rounded-full p-[6px]"><i
                             class="fa-solid fa-trash-can delete-btn cursor-pointer "></i></span></div>
 
             </div>
             <!-- 6th card -->
             <div
-                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+                class="overflow-hidden card flex justify-between rounded-[8px] shadow-lg my-[40px]  border border-gray-200  ">
                 <!-- 1st part  -->
-                <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
-                    <h2 class="text-[24px] font-bold mt-[24px]  Mobile ">MegaCorp Solutions</h2>
+                <div class=" relative bg-[#FFFFFF]  space-y-5 px-[16px] w-[100%]">
+                    <h2 class=" text-[18px] font-bold md:text-[24px] font-bold mt-[24px]  Mobile ">MegaCorp Solutions</h2>
                     <p class="text-[#64748B] React "> JavaScript Developer </p>
-                    <p class="text-[#64748B] Remote">0New York, NY
+                    <p class="sm: text-[12px] md:text-[#64748B] Remote">0New York, NY
                         •
                         Full-time
                         •
                         $130,000 - $170,0</p>
                     <p class="status font-medium text-[14px] bg-[#EEF4FF] px-[12px] uppercase
                     py-[8px] w-[120px] text-center rounded-[4px]">Not Applied</p>
-                    <p class="notes">Build enterprise applications with JavaScript and modern frameworks. We offer
+                    <p class="notes text-[13px]  md:text-[16px]">Build enterprise applications with JavaScript and modern frameworks. We offer
                         competitive compensation, health insurance, and professional development opportunities.</p>
                     <!--  -->
-                    <div class="m-8 flex flex-row gap-3">
+                    <div class=" sm:m-0 py-5 md:m-8 flex flex-row gap-3">
                         <button
                             class="interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
                         <button
@@ -272,28 +277,28 @@
                 </div>
                 <!-- 2nd part -->
 
-                <div class=" mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
+                <div class="absolute right-[28px] top-[3040px] md:static mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
                             class="fa-solid fa-trash-can delete-btn cursor-pointer"></i></span></div>
 
             </div>
             <!-- 7th card -->
             <div
-                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+                class="overflow-hidden w-[100%] card flex justify-between rounded-[8px] shadow-lg my-[40px]  border border-gray-200  ">
                 <!-- 1st part  -->
-                <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
-                    <h2 class="text-[24px] font-bold mt-[24px] Mobile">StartupXYZ</h2>
+                <div class=" relative bg-[#FFFFFF]  space-y-5 px-[16px] w-[100%]">
+                    <h2 class="text-[18px] font-bold md:text-[24px] font-bold mt-[24px] Mobile">StartupXYZ</h2>
                     <p class="text-[#64748B] React">Full Stack Engineer</p>
-                    <p class="text-[#64748B] Remote">San Francisco, CA
+                    <p class="sm: text-[12px] md:text-[#64748B] Remote">San Francisco, CA
                         •
                         Full-time
                         •
                         $130,000 - $175,00</p>
                     <p class="status font-medium text-[14px] bg-[#EEF4FF] px-[12px] uppercase
                     py-[8px] w-[120px] text-center rounded-[4px] ">Not Applied</p>
-                    <p class="notes">Join our fast-growing startup and work on our core platform. Experience with
+                    <p class="notes text-[13px]  md:text-[16px]">Join our fast-growing startup and work on our core platform. Experience with
                         Node.js and React required. Great benefits and equity package included.</p>
 
-                    <div class="m-8 flex flex-row gap-3">
+                    <div class=" sm:m-1 py-5 md:m-8 flex flex-row gap-3">
                         <button
                             class="interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
                         <button
@@ -304,18 +309,18 @@
                 </div>
                 <!-- 2nd part -->
 
-                <div class=" mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
+                <div class=" absolute right-[28px] top-[3490px] md:static mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
                             class="fa-solid fa-trash-can delete-btn cursor-pointer"></i></span></div>
 
             </div>
             <!-- 8th card -->
             <div
-                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+                class="overflow-hidden card flex justify-between rounded-[8px] shadow-lg my-[40px]  border border-gray-200  ">
                 <!-- 1st part  -->
-                <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
-                    <h2 class="text-[24px] font-bold mt-[24px] Mobile ">TechCorp Industries</h2>
+                <div class=" relative bg-[#FFFFFF]  space-y-5 px-[16px] w-[100%]">
+                    <h2 class=" text-[18px] font-bold md:text-[24px] font-bold mt-[24px] Mobile ">TechCorp Industries</h2>
                     <p class="text-[#64748B] React ">Senior Frontend Developer</p>
-                    <p class="text-[#64748B] Remote ">San Francisco, CA
+                    <p class=" sm: text-[12px] md:text-[#64748B] Remote ">San Francisco, CA
                         •
                         Full-time
                         •
@@ -326,7 +331,7 @@
                         applications using React and TypeScript. You will work with a talented team on cutting-edge
                         projects.</p>
 
-                    <div class="m-8 flex flex-row gap-3">
+                    <div class=" sm:m-1 py-5 md:m-8 flex flex-row gap-3">
                         <button
                             class="interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
                         <button
@@ -337,7 +342,7 @@
                 </div>
                 <!-- 2nd part -->
 
-                <div class=" mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
+                <div class=" absolute right-[28px] top-[3970px] md:static  mt-[50px] mr-[20px]"><span class="border border-gray-400  rounded-full p-[6px]"><i
                             class="fa-solid fa-trash-can delete-btn cursor-pointer"></i></span></div>
 
             </div>
