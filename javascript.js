@@ -1,6 +1,7 @@
 let InterviewList = [];
 let RejectedList = [];
-let currentStatus = 'all'
+const jobCounter = document.getElementById("jobCounter");
+let currentStatus = 'All-filter-btn'
 
 let totalCount = document.getElementById('totalCount');
 
@@ -26,7 +27,7 @@ function calculateCount() {
     RejectedCount.innerText = RejectedList.length
 }
 calculateCount()
-
+updateJobCounter();
 function toggleStyle(id) {
 
     allFilterBtn.classList.remove('bg-[#3B82F6]', 'text-white')
@@ -38,7 +39,7 @@ function toggleStyle(id) {
     RejectedFilterBtn.classList.add('bg-gray-300', 'text-black')
 
     const selected = document.getElementById(id)
-    //currentStatus=id
+    currentStatus = id
     selected.classList.remove('bg-gray-300', 'text-white')
     selected.classList.add('bg-[#3B82F6]', 'text-white')
 
@@ -46,6 +47,8 @@ function toggleStyle(id) {
         allCardSection.classList.add('hidden')
         filterSection.classList.remove('hidden')
         renderInterview();
+        currentStatus = 'Interview-filter-btn';
+        updateJobCounter();
     }
     else if (id == 'All-filter-btn') {
         allCardSection.classList.remove('hidden');
@@ -56,8 +59,13 @@ function toggleStyle(id) {
         allCardSection.classList.add('hidden');
         filterSection.classList.remove('hidden')
         renderRejected();
+        currentStatus = 'Rejected-filter-btn';
+        updateJobCounter();
     }
+    updateJobCounter();
+    checkEmpty(currentStatus); 
 }
+
 
 mainContainer.addEventListener('click', function (event) {
 
@@ -88,6 +96,7 @@ mainContainer.addEventListener('click', function (event) {
         RejectedList = RejectedList.filter(item => item.Mobile != cardInfo.Mobile)
         calculateCount()
         renderInterview();
+        checkEmpty(currentStatus); 
     }
     else if (event.target.classList.contains('rejected-btn')) {
         const parenNode = event.target.parentNode.parentNode;
@@ -116,22 +125,49 @@ mainContainer.addEventListener('click', function (event) {
         InterviewList = InterviewList.filter(item => item.Mobile != cardInfo.Mobile)
         calculateCount()
         renderRejected();
+        checkEmpty(currentStatus); 
     }
 
     //delete part
-  
-         else if(event.target.classList.contains('delete-btn'))
-         { 
 
-            if(!allCardSection.classList.contains('hidden'))
-            {
- const parenNode = event.target.closest('.card');
-  parenNode.remove(); 
-   calculateCount(); 
 
-            }
-         }
-    
+
+    else if (event.target.classList.contains('delete-btn')) {
+        const parenNode = event.target.closest('.card');
+        const mobile = parenNode.querySelector('.Mobile').innerText;
+
+
+        InterviewList = InterviewList.filter(item => item.Mobile !== mobile);
+        RejectedList = RejectedList.filter(item => item.Mobile !== mobile);
+
+
+        parenNode.remove();
+        calculateCount();
+        updateJobCounter();
+
+        renderInterview();
+
+        renderRejected();
+
+
+
+
+        if (event.target.classList.contains('interview-btn')) {
+
+
+            currentStatus = 'Interview-filter-btn';
+            updateJobCounter();
+            checkEmpty(currentStatus);
+        }
+
+        else if (event.target.classList.contains('rejected-btn')) {
+
+            currentStatus = 'Rejected-filter-btn';
+            updateJobCounter();
+            checkEmpty(currentStatus);
+        }
+    }
+
 }
 
 )
@@ -204,7 +240,33 @@ function renderRejected() {
 
 
 }
+function updateJobCounter() {
 
+    if (currentStatus === 'All-filter-btn') {
+        jobCounter.innerText = allCardSection.children.length + " jobs";
+    }
+    else if (currentStatus === 'Interview-filter-btn') {
+        jobCounter.innerText = InterviewList.length + " jobs";
+    }
+    else if (currentStatus === 'Rejected-filter-btn') {
+        jobCounter.innerText = RejectedList.length + " jobs";
+    }
+}
+updateJobCounter();
+checkEmpty(currentStatus);
 
+function checkEmpty(status) {
+    const emptyDiv = document.getElementById('emptyMessage');
 
+    let count = 0;
+    if (status === 'All-filter-btn') count = allCardSection.children.length;
+    else if (status === 'Interview-filter-btn') count = InterviewList.length;
+    else if (status === 'Rejected-filter-btn') count = RejectedList.length;
 
+    if (count === 0) {
+        emptyDiv.classList.remove('hidden');
+    } else {
+        emptyDiv.classList.add('hidden');
+    }
+}
+checkEmpty(currentStatus);

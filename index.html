@@ -20,10 +20,10 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="font-[Roboto] [#F8FAFC] ">
-    <header class="max-w-[77%] mx-auto container my-[60px]">
-        <h1 class="text-5xl font-bold  mb-[20px]">Job Application Tracker</h1>
-        <div class="grid grid-cols-3 gap-[16px]">
+<body class="md:font-[Roboto] [#F8FAFC]  ">
+    <header class=" max-w-[77%] mx-auto container my-[60px]">
+        <h1 class="sm:text-center text-3xl font-extrabold md:text-5xl font-bold  mb-[20px]">Job Application Tracker</h1>
+        <div class="sm:grid grid-cols-1  space-y-1 md: grid-cols-3 gap-[16px]">
             <div class="p-[20px] rounded-[8px] shadow-md bg-[#FFFFFF] border-t border-gray-300  ">
                 <p class="font-medium text-[14px] mb-[8px]">Total</p>
                 <p id="totalCount" class="text-[25px] font-bold ">0</p>
@@ -39,20 +39,36 @@
         </div>
     </header>
 
-    <main class="max-w-[77%] mx-auto container my-[60px]">
-        <div>
-            <h1 class="mb-[30px] font-bold text-3xl ">Available Jobs</h1>
+    <main class=" max-w-[77%] mx-auto container my-[60px]">
+        <div class="flex justify-between">
+            <div class="avail">
+                <h1 class="mb-[30px] font-bold text-3xl ">Available Jobs</h1>
+            </div>
+
+            <div class="jobs"></div>
+            <p id="jobCounter" class="jobs mb-[30px]">0 jobs </p>
         </div>
 
 
-        <div class="flex flex-row gap-[8px] mb-[16px]">
+        <div class="  sm: mx-auto md: flex flex-row gap-[8px] mb-[16px]">
 
-            <button onclick="toggleStyle('All-filter-btn')" id="All-filter-btn" class="bg-[#3B82F6] px-10 py-2 text-white font-semibold 
-                rounded-[4px] shadow-md">All</button>
+            <button onclick="toggleStyle('All-filter-btn')" id="All-filter-btn" class=" sm:px-5 py-2 md: bg-[#3B82F6]  md:px-10 py-2 text-white font-semibold 
+                rounded-[4px] shadow-md px-10 py-2">All</button>
             <button onclick="toggleStyle('Interview-filter-btn')" id="Interview-filter-btn"
-                class=" px-10 py-2  font-semibold rounded-[4px] shadow-md border-t border-gray-300 ">Interview</button>
-            <button onclick="toggleStyle('Rejected-filter-btn')" id="Rejected-filter-btn"
-                class=" px-10 py-2  font-semibold rounded-[4px]  shadow-md border-t border-gray-300  ">Rejected</button>
+                class=" sm:px-4 py-2 md:font-semibold rounded-[4px] shadow-md border-t border-gray-300 px-10 py-2">Interview</button>
+            <button onclick="toggleStyle('Rejected-filter-btn') " id="Rejected-filter-btn"
+                class=" sm:px-4 py-2 md:font-semibold px-10 py-2 rounded-[4px]  shadow-md border-t border-gray-300  ">Rejected</button>
+        </div>
+
+
+
+        <!-- empty mesage -->
+        <div id="emptyMessage" class="hidden text-center border border-gray-300
+         mx-auto container shadow-md bg-[#FFFFFF] rounded-[10px]
+          ">
+            <img src="jobs.png" alt="No jobs" class="mx-auto w-32 h-32 mb-4 mt-[110px]">
+            <p class="text-[24px] font-semibold">No jobs available!</p>
+            <p class="text-[#64748B] pb-[111px] ">Check back soon for new job opportunities</p>
         </div>
         <!-- filtered section -->
         <section id="filtered-section" class="hidden"></section>
@@ -60,7 +76,8 @@
 
         <section id="allCards">
             <!-- 1st card -->
-            <div class="card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+            <div
+                class="sm:mx-auto md:card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
                 <!-- 1st part  -->
                 <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
                     <h2 class="text-[24px] font-bold mt-[24px] Mobile">Mobile First Corp</h2>
@@ -95,7 +112,8 @@
 
             <!-- 2nd card -->
 
-            <div class=" card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+            <div
+                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
                 <!-- 1st part  -->
                 <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
                     <h2 class="text-[24px] font-bold mt-[24px] Mobile">WebFlow Agency</h2>
@@ -128,7 +146,8 @@
             </div>
 
             <!-- 3rd card  -->
-            <div class=" card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+            <div
+                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
                 <!-- 1st part  -->
                 <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
                     <h2 class="text-[24px] font-bold mt-[24px] Mobile">DataViz Solutions</h2>
@@ -161,7 +180,8 @@
             </div>
             <!-- 4th card -->
 
-            <div class=" card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+            <div
+                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
                 <!-- 1st part  -->
                 <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
                     <h2 class="text-[24px] font-bold mt-[24px] Mobile">CloudFirst Inc</h2>
@@ -192,7 +212,8 @@
 
             </div>
             <!-- 5th card -->
-            <div class=" card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+            <div
+                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
                 <!-- 1st part  -->
                 <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
                     <h2 class="text-[24px] font-bold mt-[24px] Mobile">Innovation Labs</h2>
@@ -219,12 +240,13 @@
                 </div>
                 <!-- 2nd part -->
 
-                <div class= "mt-[50px] mr-[20px] "><span class="border border-gray-400  rounded-full p-[6px]"><i
+                <div class="mt-[50px] mr-[20px] "><span class="border border-gray-400  rounded-full p-[6px]"><i
                             class="fa-solid fa-trash-can delete-btn cursor-pointer "></i></span></div>
 
             </div>
             <!-- 6th card -->
-            <div class=" card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+            <div
+                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
                 <!-- 1st part  -->
                 <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
                     <h2 class="text-[24px] font-bold mt-[24px]  Mobile ">MegaCorp Solutions</h2>
@@ -255,7 +277,8 @@
 
             </div>
             <!-- 7th card -->
-            <div class=" card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+            <div
+                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
                 <!-- 1st part  -->
                 <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
                     <h2 class="text-[24px] font-bold mt-[24px] Mobile">StartupXYZ</h2>
@@ -286,7 +309,8 @@
 
             </div>
             <!-- 8th card -->
-            <div class=" card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
+            <div
+                class="sm:mx-auto md: card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300  ">
                 <!-- 1st part  -->
                 <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
                     <h2 class="text-[24px] font-bold mt-[24px] Mobile ">TechCorp Industries</h2>
