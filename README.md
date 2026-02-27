@@ -1,12 +1,12 @@
 1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
-## ans: getElementById is used to Selects only one element using its unique id and  returns a single element 
+# ans: getElementById is used to Selects only one element using its unique id and  returns a single element 
 
-## getElementsByClassName  is used to Select elements using class name and Returns an HTMLCollection. It can select multiple elements.
+# getElementsByClassName  is used to Select elements using class name and Returns an HTMLCollection. It can select multiple elements.
 
 # querySelector is used to Selects the first matching element.Uses CSS selector syntax.
 
-## querySelectorAll is used to Selects all matching elements.Returns a NodeList.
+# querySelectorAll is used to Selects all matching elements.Returns a NodeList.
 
 2. How do you create and insert a new element into the DOM?
 
@@ -14,7 +14,7 @@
 
 
 3. What is Event Bubbling? And how does it work?
-# ans:## Event Bubbling is a behavior in JavaScript where an event starts from the target element and then moves upward through its parent elements in the DOM tree.Let A button inside a div The div inside the body. If both the button and the div have click event listeners:When the button is clicked,First, the button’s event runs.Then, the div’s event runs.After that, the body’s event can also run.So the event moves from child → parent → higher parent.This upward movement of the event is called Event Bubbling.
+# ans: Event Bubbling is a behavior in JavaScript where an event starts from the target element and then moves upward through its parent elements in the DOM tree.Let A button inside a div The div inside the body. If both the button and the div have click event listeners:When the button is clicked,First, the button’s event runs.Then, the div’s event runs.After that, the body’s event can also run.So the event moves from child → parent → higher parent.This upward movement of the event is called Event Bubbling.
 
 
 4. What is Event Delegation in JavaScript? Why is it useful?
