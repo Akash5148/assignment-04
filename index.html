@@ -20,19 +20,19 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
-<body class="font-[Roboto] bg-[#ffffff]  ">
-    <header class=" max-w-[77%] mx-auto container my-[60px]">
+<body class="font-[Roboto] bg-blue-50  "> 
+    <header class=" max-w-[77%] mx-auto container my-[60px] md:sticky top-0  z-70 bg-blue-200 rounded-sm p-4">
         <h1 class="sm:text-4xl font-extrabold md:text-5xl   mb-5">Job Application Tracker</h1>
-        <div class="  sm: grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="p-5 rounded-lg shadow-md bg-[#FFFFFF] border-t border-gray-300  ">
+        <div class="  sm: grid grid-cols-1 md:grid-cols-3 gap-4 ">
+            <div class="p-5 rounded-lg shadow-md bg-blue-50 border-t border-gray-300  ">
                 <p class="font-medium text-[14px] mb-2">Total</p>
                 <p id="totalCount" class="text-[25px] font-bold ">0</p>
             </div>
-            <div class="p-5 rounded-lg shadow-md bg-[#FFFFFF] border-t border-gray-300 ">
+            <div class="p-5 rounded-lg shadow-md bg-blue-50 border-t border-gray-300   ">
                 <p class="font-medium text-[14px] mb-2">Interview</p>
                 <p id="InterviewCount" class="text-[25px] font-bold text-green-500 ">0</p>
             </div>
-            <div class="p-5 rounded-lg shadow-md bg-[#FFFFFF] border-t border-gray-300 ">
+            <div class="p-5 rounded-lg shadow-md bg-blue-50 border-t border-gray-300   ">
                 <p class="font-medium text-[14px] mb-2">Rejected</p>
                 <p id="RejectedCount" class="text-[25px] font-bold text-red-500">0</p>
             </div>
@@ -40,7 +40,7 @@
     </header>
 
     <main class=" max-w-[77%] mx-auto container my-[60px]">
-        <div class="flex justify-between gap-2 ">
+        <div class="flex justify-between gap-2  bg-blue-100 p-2  rounded-sm">
             <div class="avail">
                 <h1 class="sm:text-2xl   md:mb-[30px] font-bold text-3xl">Available Jobs</h1>
             </div>
@@ -50,7 +50,7 @@
         </div>
 
 
-        <div class=" flex flex-col md:flex-row gap-2 mb-4 mt-6  ">
+        <div class=" flex flex-col md:flex-row gap-2 mb-4 mt-6   ">
             <button onclick="toggleStyle('All-filter-btn')" id="All-filter-btn" class=" px-10 py-2 bg-[#3B82F6] text-white font-semibold 
                 rounded-sm shadow-md ">All</button>
             <button onclick="toggleStyle('Interview-filter-btn')" id="Interview-filter-btn"
@@ -68,7 +68,7 @@
 
         <!-- empty mesage -->
         <div id="emptyMessage" class="hidden text-center border border-gray-300
-         mx-auto container shadow-md bg-[#FFFFFF] rounded-[10px]
+         mx-auto container shadow-md bg-blue-50 rounded-[10px]
           ">
             <img src="jobs.png" alt="No jobs" class="mx-auto w-32 h-32 mb-4 mt-[110px]">
             <p class="text-[24px] font-semibold">No jobs available!</p>
@@ -81,10 +81,10 @@
         <section id="allCards">
             <!-- 1st card -->
             <div
-                class="card flex justify-between rounded-lg overflow-hidden
+                class="card flex justify-between rounded-lg overflow-hidden bg-blue-100
                 shadow-lg my-10  border border-gray-200  relative ">
                 <!-- 1st part  -->
-                <div class=" bg-[#FFFFFF]  space-y-5 px-4  w-full ">
+                <div class="   space-y-5 px-4  w-full ">
                     <h2 class=" text-[18px]  md: text-6xl font-bold mt-6 Mobile">Mobile First Corp</h2>
                     <p class="text-[#64748B] React ">React Native Developer</p>
                     <p class=" sm: text-[12px] md:text-[#64748B] Remote ">Remote
@@ -118,9 +118,9 @@
             <!-- 2nd card -->
 
             <div
-                class="card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200 overflow-hidden  relative ">
+                class="card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200 overflow-hidden  relative bg-blue-100 ">
                 <!-- 1st part  -->
-                <div class=" bg-[#FFFFFF]  space-y-5 px-4 w-full">
+                <div class="  space-y-5 px-4 w-full">
                     <h2 class="text-[18px]  md:text-[24px] font-bold mt-6 Mobile">WebFlow Agency</h2>
                     <p class="text-[#64748B] React">Web Designer & Developer</p>
                     <p class="sm: text-[12px] md:text-[#64748B] Remote ">Los Angeles, CA
@@ -152,9 +152,9 @@
 
             <!-- 3rd card  -->
             <div
-                class=" card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200 overflow-hidden  relative ">
+                class=" card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200 overflow-hidden  bg-blue-100 relative ">
                 <!-- 1st part  -->
-                <div class=" bg-[#FFFFFF]  space-y-5 px-4 w-full">
+                <div class="   space-y-5 px-4 w-full">
                     <h2 class="text-[18px]  md:text-[24px] font-bold mt-6 Mobile">DataViz Solutions</h2>
                     <p class="text-[#64748B] React">Data Visualization Specialist</p>
                     <p class=" sm: text-[12px] md:text-[#64748B] Remote">Boston, MA
@@ -186,9 +186,9 @@
             <!-- 4th card -->
 
             <div
-                class=" card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200 overflow-hidden  relative ">
+                class=" card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200 overflow-hidden  relative bg-blue-100 ">
                 <!-- 1st part  -->
-                <div class="  bg-[#FFFFFF]  space-y-5 px-4 w-full">
+                <div class="    space-y-5 px-4 w-full">
                     <h2 class="text-[18px]  md:text-[24px] font-bold mt-6 Mobile">CloudFirst Inc</h2>
                     <p class="text-[#64748B] React">Backend Developer</p>
                     <p class="sm: text-[12px] md:text-[#64748B] Remote">Seattle, WA
@@ -218,9 +218,9 @@
             </div>
             <!-- 5th card -->
             <div
-                class="overflow-hidden card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200  relative ">
+                class="overflow-hidden card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200 bg-blue-100 relative ">
                 <!-- 1st part  -->
-                <div class=" bg-[#FFFFFF]  space-y-5 px-4 w-full">
+                <div class="   space-y-5 px-4 w-full">
                     <h2 class=" text-[18px] font-bold md:text-[24px] mt-6 Mobile">Innovation Labs</h2>
                     <p class="text-[#64748B] React">UI/UX Engineer</p>
                     <p class=" sm: text-[12px] md:text-[#64748B] Remote">
@@ -251,9 +251,9 @@
             </div>
             <!-- 6th card -->
             <div
-                class="overflow-hidden card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200  relative ">
+                class="overflow-hidden card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200 bg-blue-100 relative ">
                 <!-- 1st part  -->
-                <div class=" bg-[#FFFFFF]  space-y-5 px-4 w-full">
+                <div class="  space-y-5 px-4 w-full">
                     <h2 class=" text-[18px] font-bold md:text-[24px]  mt-6  Mobile ">MegaCorp Solutions</h2>
                     <p class="text-[#64748B] React "> JavaScript Developer </p>
                     <p class="sm: text-[12px] md:text-[#64748B] Remote">0New York, NY
@@ -283,9 +283,9 @@
             </div>
             <!-- 7th card -->
             <div
-                class="overflow-hidden w-full card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200  relative ">
+                class="overflow-hidden w-full card flex justify-between rounded-lg shadow-lg my-10  border border-gray-200 bg-blue-100 relative ">
                 <!-- 1st part  -->
-                <div class="  bg-[#FFFFFF]  space-y-5 px-4 w-full">
+                <div class="    space-y-5 px-4 w-full">
                     <h2 class="text-[18px] font-bold md:text-[24px]  mt-6 Mobile">StartupXYZ</h2>
                     <p class="text-[#64748B] React">Full Stack Engineer</p>
                     <p class="sm: text-[12px] md:text-[#64748B] Remote">San Francisco, CA
@@ -316,9 +316,9 @@
             </div>
             <!-- 8th card -->
             <div
-                class="overflow-hidden card relative flex justify-between rounded-lg shadow-lg my-10  border border-gray-200  ">
+                class="overflow-hidden card relative flex justify-between rounded-lg shadow-lg my-10  border border-gray-200 bg-blue-100 ">
                 <!-- 1st part  -->
-                <div class="  bg-[#FFFFFF]  space-y-5 px-4 w-full">
+                <div class="    space-y-5 px-4 w-full">
                     <h2 class=" text-[18px] font-bold md:text-[24px]  mt-6 Mobile ">TechCorp Industries</h2>
                     <p class="text-[#64748B] React ">Senior Frontend Developer</p>
                     <p class=" sm: text-[12px] md:text-[#64748B] Remote ">San Francisco, CA
@@ -326,8 +326,8 @@
                         Full-time
                         •
                         $130,000 - $175,000</p>
-                    <p class="status font-medium text-[14px] bg-[#EEF4FF] px-3 uppercase
-                    py-2 w-[120px] text-center rounded-sm">Not Applied</p>
+                    <p class="status font-medium text-[14px] bg-[#FFFFFF] px-3 uppercase
+                    py-2 w-[120px] text-center text-red-500 rounded-sm">Not Applied</p>
                     <p class="notes">We are looking for an experienced Frontend Developer to build scalable web
                         applications using React and TypeScript. You will work with a talented team on cutting-edge
                         projects.</p>

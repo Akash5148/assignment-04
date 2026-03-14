@@ -180,21 +180,21 @@ function renderInterview() {
         div.className = 'card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300'
 
         div.innerHTML = `
-    <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
-                    <h2 class="text-[24px] font-bold mt-[24px] Mobile">${Interview.Mobile}</h2>
+    <div class="bg-blue-100  space-y-5 px-4 w-full">
+                    <h2 class="text-[24px] font-bold mt-6 Mobile">${Interview.Mobile}</h2>
                     <p class="text-[#64748B] React">${Interview.React}</p>
                     <p class="text-[#64748B] Remote">${Interview.Remote}</p>
-                    <p class="status font-medium text-[14px] bg-[#EEF4FF] px-[12px] uppercase
-                    py-[8px] w-[120px] text-center rounded-[4px]">${Interview.status}</p>
+                    <p class="status font-medium text-[14px] bg-[#EEF4FF] px-3 uppercase
+                    py-2 w-[120px] text-center text-green-500 rounded-sm">${Interview.status}</p>
                     <p class="notes">Build cross-platform mobile applications
                         using React Native. Work on products
                         used by millions of users worldwide.</p>
 
                     <div class="m-8 flex flex-row gap-3">
                         <button
-                            class="interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
+                            class="interview-btn px-4 py-2 rounded-lg border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
                         <button
-                            class="rejected-btn px-4 py-2 rounded-[8px] border border-red-400 text-red-500 uppercase font-semibold">Rejected</button>
+                            class="rejected-btn px-4 py-2 rounded-lg border border-red-400 text-red-500 uppercase font-semibold">Rejected</button>
                     </div>
 
 
@@ -214,21 +214,21 @@ function renderRejected() {
         div.className = 'card flex justify-between rounded-[8px] shadow-lg my-[40px]  border-t border-gray-300'
 
         div.innerHTML = `
-    <div class="bg-[#FFFFFF]  space-y-5 px-[16px]">
-                    <h2 class="text-[24px] font-bold mt-[24px] Mobile">${Rejected.Mobile}</h2>
+    <div class="bg-blue-100  space-y-5 px-4 w-full">
+                    <h2 class="text-[24px] font-bold mt-6 Mobile">${Rejected.Mobile}</h2>
                     <p class="text-[#64748B] React">${Rejected.React}</p>
                     <p class="text-[#64748B] Remote">${Rejected.Remote}</p>
-                    <p class="status font-medium text-[14px] bg-[#EEF4FF] px-[12px] uppercase
-                    py-[8px] w-[120px] text-center rounded-[4px]">${Rejected.status}</p>
+                    <p class="status font-medium text-[14px] bg-[#FFFFFF] px-3 uppercase
+                    py-2 w-[120px] text-center text-red-500 rounded-sm">${Rejected.status}</p>
                     <p class="notes">Build cross-platform mobile applications
                         using React Native. Work on products
                         used by millions of users worldwide.</p>
 
                     <div class="m-8 flex flex-row gap-3">
                         <button
-                            class="interview-btn px-4 py-2 rounded-[8px] border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
+                            class="interview-btn px-4 py-2 rounded-lg border border-green-500 text-green-500 uppercase font-semibold ">interview</button>
                         <button
-                            class="rejected-btn px-4 py-2 rounded-[8px] border border-red-400 text-red-500 uppercase font-semibold">Rejected</button>
+                            class="rejected-btn px-4 py-2 rounded-lg border border-red-400 text-red-500 uppercase font-semibold">Rejected</button>
                     </div>
 
 
